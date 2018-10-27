@@ -1,0 +1,26 @@
+article, footer {
+    margin-top:20px;
+}
+
+section {
+    border: 1px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    margin-top: 9px;
+}
+header {
+    border-bottom: 1px solid black;
+}
+
+footer {
+    margin-bottom: 10px;
+}
+/*
+label {
+    margin-right: 5px;
+}
+
+.btn-danger {
+    margin-left: 5px;
+}
+*/

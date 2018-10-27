@@ -13,28 +13,50 @@
     <title>Family Tree Creator</title>
   </head>
   <body class="container-fluid">
-    <header id="currentLocation">
-      
-    </header>      
-    <section id="parents">
-      
+    <!-- Display input fields to gather data regarding the immediate family -->  
+    <section id="1">  
+      <header id="currentLocation">
+        <div class="row">    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+            <strong id="showCurrentStep">Step 1: Immediate Family</strong>
+          </div>
+        </div>
+      </header>
+      <!--Gather names of the parents -->    
+      <article id="parents">
+        <div class="row">    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <span class="btn-group">  
+              <label for="father">Father</label>
+              <input type="input" name="father" class="form-control" />
+              <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            </span>
+              
+            <span class="btn-group">  
+              <label for="mother">Mother</label>
+              <input type="input" name="mother" class="form-control" />
+              <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            </span>              
+          </div>
+        </div>      
+      </article>
+     <!-- Gather names of the kids -->    
+      <article id="kids">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <button type="button" class="btn btn-warning">Add Child</button>
+        </div>
+      </article>
+      <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
+      <footer id="continue">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <button type="button" class="btn btn-success">Update Father's Family</button>
+        </div>      
+      </footer>
     </section>
-    <section id="kids">
-      
-    </section>
-    <footer id="continue">
-      
-    </footer> 
-<!--      
-    <div class="row">  
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <h1>Hello world!</h1>
-      </div> 
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <h1>Goodbye world!</h1>
-      </div>       
-    </div>
--->
+  <script>
+    let currentStep = 1;
 
+      
+  </script>      
   </body>
 </html>

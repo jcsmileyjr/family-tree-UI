@@ -98,8 +98,8 @@
       </article>
      <!-- Gather names of the siblings -->
       <article class="row text-center" id="fatherSibling">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
-          <div class="col-xs-9 col-sm-6 col-md-6 col-lg-3 text-left">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">Child</div>
+          <div class="col-xs-offset-1 col-xs-8 col-sm-6 col-md-6 col-lg-3 text-left">
             <input type="text" id="currentFatherSibling" />
           </div>         
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
@@ -145,8 +145,8 @@
       </article>
      <!-- Gather names of the siblings -->
       <article class="row text-center" id="motherSibling">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
-          <div class="col-xs-9 col-sm-6 col-md-6 col-lg-3 text-left">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-left">Child</div>
+          <div class="col-xs-offset-1 col-xs-8 col-sm-6 col-md-6 col-lg-3 text-left">
             <input type="text" id="currentMotherSibling" />
           </div>         
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
@@ -211,23 +211,24 @@
       newChild.focus();         
     }
       
-    //function to add children to the current parents  
-    function addKids(){
-        
+    //function to add children to the current parents. This is based on the current step which is updated when the view changes.  
+    function addKids(){        
       if(currentStep === 1){
         //get the input field for the child    
         let newChild = document.getElementById("currentChildName");        
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showKids");
           
-        showChildren(newChild, kidsDiv);  
+        showChildren(newChild, kidsDiv); 
+          
       }else if(currentStep === 2){
         //get the input field for the child    
         let newChild = document.getElementById("currentFatherSibling");        
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showFatherSiblings");
           
-        showChildren(newChild, kidsDiv);           
+        showChildren(newChild, kidsDiv);
+          
       }else {
         //get the input field for the child    
         let newChild = document.getElementById("currentMotherSibling");        
@@ -235,35 +236,7 @@
         const kidsDiv = document.getElementById("showMotherSiblings");
           
         showChildren(newChild, kidsDiv);            
-      }
-        
-        
-        
-/*
-      //get the immediate family input field for the child    
-      let newChild = document.getElementById("currentChildName");
-        
-      //create a new html element to display the child's name
-      let displayName = document.createElement("strong")
-          
-      //add the new name into the displayName html element
-      displayName.innerHTML = newChild.value;
-          
-      //add styles to it    
-      displayName.classList.add("addChildrenStyle");  
-          
-      //get the kids div of the UI
-      const kidsDiv = document.getElementById("showKids");
-
-      //add it to the end of the children portion of the UI    
-      kidsDiv.append(displayName);          
-        
-      //clear the immediate family child input field for reuse
-      newChild.value = "";
-        
-      //refocus the user to the child's input box to add another name    
-      newChild.focus(); 
-*/      
+      }     
     }  
 
       

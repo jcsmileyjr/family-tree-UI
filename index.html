@@ -52,12 +52,13 @@
      <!-- Gather names of the kids -->    
       <article class="row text-center" id="kids">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+          <div class="col-xs-9 col-sm-6 col-md-6 col-lg-3 text-left">
+            <input type="text" id="currentChildName" />
           </div>         
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
           <button type="button" class="btn btn-warning" onclick="addKids()" >Add Child</button>
         </div>
+        <aside id="showKids"></aside>  
       </article>
       <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
       <footer class="text-center" id="continue">          
@@ -149,7 +150,6 @@
       </footer>
     </section>      
   <script>
-    let currentStep = 1;
       
     //show the paternal family input form and hide the immediate family input form  
     function showPaternalFamily(){
@@ -171,19 +171,34 @@
       let maternalFamily = document.getElementById("maternalFamily");
         
       maternalFamily.style.display = "block";
-    } 
+    }  
       
+    //function to add children to the current parents  
     function addKids(){
-console.log("It worked");        
-      let newChild = document.createElement("input");
-    
-      newChild.setAttribute("type", "text");
+
+      //get the immediate family input field for the child    
+      let newChild = document.getElementById("currentChildName");
         
-      newChild.classList.add("addChildrenStyle");
+      //create a new html element to display the child's name
+      let displayName = document.createElement("strong")
+          
+      //add the new name into the displayName html element
+      displayName.innerHTML = newChild.value;
+          
+      //add styles to it    
+      displayName.classList.add("addChildrenStyle");  
+          
+      //get the kids div of the UI
+      const kidsDiv = document.getElementById("showKids");
+
+      //add it to the end of the children portion of the UI    
+      kidsDiv.append(displayName);          
         
-      const kidsDiv = document.getElementById("kids");
-    
-      kidsDiv.append(newChild);
+      //clear the immediate family child input field for reuse
+      newChild.value = "";
+        
+      //refocus the user to the child's input box to add another name    
+      newChild.focus();         
     }  
 
       

@@ -96,12 +96,17 @@
           </div>
         </div>          
       </article>
-     <!-- Gather names of the siblings -->    
-      <article class="row " id="fatherSibling">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
-          <button type="button" class="btn btn-warning">Father's Sibling</button>
+     <!-- Gather names of the siblings -->
+      <article class="row text-center" id="fatherSibling">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
+          <div class="col-xs-9 col-sm-6 col-md-6 col-lg-3 text-left">
+            <input type="text" id="currentFatherSibling" />
+          </div>         
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
+          <button type="button" class="btn btn-warning" onclick="addKids()" >Father's Sibling</button>
         </div>
-      </article>
+        <aside id="showFatherSiblings"></aside>  
+      </article>        
       <!-- Submit button to save inputted data and continue to next step (gather names of mother side of the family) -->    
       <footer class="text-center" id="continue">          
           <button type="button" class="btn btn-success" onClick="showMaternalFamily()">Update Mother's Family</button>              
@@ -138,18 +143,25 @@
           </div>
         </div>          
       </article>
-     <!-- Gather names of the siblings -->    
-      <article class="row " id="fatherSibling">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
-          <button type="button" class="btn btn-warning">Mother's Sibling</button>
+     <!-- Gather names of the siblings -->
+      <article class="row text-center" id="motherSibling">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
+          <div class="col-xs-9 col-sm-6 col-md-6 col-lg-3 text-left">
+            <input type="text" id="currentMotherSibling" />
+          </div>         
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
+          <button type="button" class="btn btn-warning" onclick="addKids()" >Mother's Sibling</button>
         </div>
-      </article>
+        <aside id="showMotherSiblings"></aside>  
+      </article>         
       <!-- Submit button to save inputted data and continue to next step (create family tree) -->    
       <footer class="text-center" id="continue">          
           <button type="button" class="btn btn-success">Create Family Tree</button>              
       </footer>
     </section>      
   <script>
+    
+    let currentStep = 1;
       
     //show the paternal family input form and hide the immediate family input form  
     function showPaternalFamily(){
@@ -160,6 +172,9 @@
       let paternalFamily = document.getElementById("paternalFamily");
         
       paternalFamily.style.display = "block";
+        
+      //update currentStep to be use in addKid()
+      currentStep = 2;
     }
       
     //show the maternal family input form and hide the paternal family input form  
@@ -171,11 +186,60 @@
       let maternalFamily = document.getElementById("maternalFamily");
         
       maternalFamily.style.display = "block";
-    }  
+        
+      //update currentStep to be use in addKid()
+      currentStep = 3;        
+    }
+      
+    function showChildren(newChild, kidsDiv){
+      //create a new html element to display the child's name
+      let displayName = document.createElement("strong")
+          
+      //add the new name into the displayName html element
+      displayName.innerHTML = newChild.value;
+          
+      //add styles to it    
+      displayName.classList.add("addChildrenStyle"); 
+        
+      //add it to the end of the children portion of the UI    
+      kidsDiv.append(displayName);          
+        
+      //clear the immediate family child input field for reuse
+      newChild.value = "";
+        
+      //refocus the user to the child's input box to add another name    
+      newChild.focus();         
+    }
       
     //function to add children to the current parents  
     function addKids(){
-
+        
+      if(currentStep === 1){
+        //get the input field for the child    
+        let newChild = document.getElementById("currentChildName");        
+        //get the kids div of the UI
+        const kidsDiv = document.getElementById("showKids");
+          
+        showChildren(newChild, kidsDiv);  
+      }else if(currentStep === 2){
+        //get the input field for the child    
+        let newChild = document.getElementById("currentFatherSibling");        
+        //get the kids div of the UI
+        const kidsDiv = document.getElementById("showFatherSiblings");
+          
+        showChildren(newChild, kidsDiv);           
+      }else {
+        //get the input field for the child    
+        let newChild = document.getElementById("currentMotherSibling");        
+        //get the kids div of the UI
+        const kidsDiv = document.getElementById("showMotherSiblings");
+          
+        showChildren(newChild, kidsDiv);            
+      }
+        
+        
+        
+/*
       //get the immediate family input field for the child    
       let newChild = document.getElementById("currentChildName");
         
@@ -198,7 +262,8 @@
       newChild.value = "";
         
       //refocus the user to the child's input box to add another name    
-      newChild.focus();         
+      newChild.focus(); 
+*/      
     }  
 
       

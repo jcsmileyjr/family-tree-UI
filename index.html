@@ -20,7 +20,7 @@
   </head>
   <body class="container-fluid">
     <!-- Display input fields to gather data regarding the immediate family -->  
-    <section id="1">  
+    <section id="immediateFamily">  
       <header id="currentLocation">
         <div class="row">    
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
@@ -52,17 +52,17 @@
      <!-- Gather names of the kids -->    
       <article class="row " id="kids">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
-          <button type="button" class="btn btn-warning">Add Child</button>
+          <button type="button" class="btn btn-warning" >Add Child</button>
         </div>
       </article>
       <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
       <footer class="text-center" id="continue">          
-          <button type="button" class="btn btn-success">Update Father's Family</button>              
+          <button type="button" class="btn btn-success" onClick="showPaternalFamily()">Update Father's Family</button>              
       </footer>
     </section>
       
     <!-- Display input fields to gather data regarding the paternal side of the family -->  
-    <section id="2">  
+    <section id="paternalFamily">  
       <header>
         <div class="row">    
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
@@ -99,12 +99,12 @@
       </article>
       <!-- Submit button to save inputted data and continue to next step (gather names of mother side of the family) -->    
       <footer class="text-center" id="continue">          
-          <button type="button" class="btn btn-success">Update Mother's Family</button>              
+          <button type="button" class="btn btn-success" onClick="showMaternalFamily()">Update Mother's Family</button>              
       </footer>
     </section>
       
     <!-- Display input fields to gather data regarding the maternal side of the family -->  
-    <section id="3">  
+    <section id="maternalFamily">  
       <header>
         <div class="row">    
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
@@ -146,6 +146,28 @@
     </section>      
   <script>
     let currentStep = 1;
+      
+    //show the paternal family input form and hide the immediate family input form  
+    function showPaternalFamily(){
+      let immediateFamily = document.getElementById("immediateFamily");
+      
+      immediateFamily.style.display = "none";
+        
+      let paternalFamily = document.getElementById("paternalFamily");
+        
+      paternalFamily.style.display = "block";
+    }
+      
+    //show the maternal family input form and hide the paternal family input form  
+    function showMaternalFamily(){
+      let paternalFamily = document.getElementById("paternalFamily");
+      
+      paternalFamily.style.display = "none";
+        
+      let maternalFamily = document.getElementById("maternalFamily");
+        
+      maternalFamily.style.display = "block";
+    }  
 
       
   </script>      

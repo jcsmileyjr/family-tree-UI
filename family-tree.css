@@ -26,4 +26,8 @@ input {
     color: red;
 }
 
+#paternalFamily, #maternalFamily {
+    display: none;
+}
+
 

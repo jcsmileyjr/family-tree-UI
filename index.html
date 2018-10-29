@@ -60,6 +60,48 @@
           <button type="button" class="btn btn-success">Update Father's Family</button>              
       </footer>
     </section>
+      
+    <!-- Display input fields to gather data regarding the paternal side of the family -->  
+    <section id="2">  
+      <header>
+        <div class="row">    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+            <strong id="showCurrentStep">Step 2/3: Paternal Family</strong>
+          </div>
+        </div>
+      </header>
+      <!--Gather names of the parents -->    
+      <article id="paternalParents">
+        <div class="row paternalWhiteSpace">
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+            <input type="text" />
+          </div> 
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+            <input type="text" />
+          </div> 
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+          </div>
+        </div>          
+      </article>
+     <!-- Gather names of the kids -->    
+      <article class="row " id="fatherSibling">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <button type="button" class="btn btn-warning">Father's Sibling</button>
+        </div>
+      </article>
+      <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
+      <footer class="text-center" id="continue">          
+          <button type="button" class="btn btn-success">Update Mother's Family</button>              
+      </footer>
+    </section>      
   <script>
     let currentStep = 1;
 

@@ -97,9 +97,51 @@
           <button type="button" class="btn btn-warning">Father's Sibling</button>
         </div>
       </article>
-      <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
+      <!-- Submit button to save inputted data and continue to next step (gather names of mother side of the family) -->    
       <footer class="text-center" id="continue">          
           <button type="button" class="btn btn-success">Update Mother's Family</button>              
+      </footer>
+    </section>
+      
+    <!-- Display input fields to gather data regarding the maternal side of the family -->  
+    <section id="2">  
+      <header>
+        <div class="row">    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+            <strong id="showCurrentStep">Step 2/3: Maternal Family</strong>
+          </div>
+        </div>
+      </header>
+      <!--Gather names of the grand-parents -->    
+      <article id="maternalParents">
+        <div class="row paternalWhiteSpace">
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+            <input type="text" />
+          </div> 
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+            <input type="text" />
+          </div> 
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
+            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+          </div>
+        </div>          
+      </article>
+     <!-- Gather names of the siblings -->    
+      <article class="row " id="fatherSibling">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <button type="button" class="btn btn-warning">Mother's Sibling</button>
+        </div>
+      </article>
+      <!-- Submit button to save inputted data and continue to next step (create family tree) -->    
+      <footer class="text-center" id="continue">          
+          <button type="button" class="btn btn-success">Create Family Tree</button>              
       </footer>
     </section>      
   <script>

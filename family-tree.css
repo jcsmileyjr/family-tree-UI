@@ -1,35 +1,50 @@
+/*added white-space around each section and footer*/
 article, footer {
     margin-top:20px;
 }
 
+/*created a border around the app*/
 section {
     border: 1px solid black;
     border-right: 3px solid black;
     border-left: 3px solid black;
     margin-top: 9px;
 }
+
+/*use a border to seperate the nav from the body*/
 header {
     border-bottom: 1px solid black;
 }
 
+/*add white-space under the footer and father of the current family*/
 footer, .paternalWhiteSpace {
     margin-bottom: 10px;
 }
 
+/*fix a bug where the left side of input fields disappeared. Center the text inside the input fields*/
 input {
     border-left: 1px solid black;
+    text-align: center;
 }
 
+/*make the skip button look like clickable text field*/
 .btn-danger {
     border: none;
     background-color: white;
     color: red;
 }
 
+/*add white-space around the add child button*/
+.btn-warning {
+    margin: 20px 0px 10px 0px;
+}
+
+/*hides different sections when not in use*/
 #paternalFamily, #maternalFamily {
     display: none;
 }
 
+/*add white-space and a new line for each child added*/
 .addChildrenStyle {
     margin-top: 15px;
     display: block;

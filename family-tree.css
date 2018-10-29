@@ -12,15 +12,18 @@ header {
     border-bottom: 1px solid black;
 }
 
-footer {
+footer, .paternalWhiteSpace {
     margin-bottom: 10px;
 }
-/*
-label {
-    margin-right: 5px;
+
+input {
+    border-left: 1px solid black;
 }
 
 .btn-danger {
-    margin-left: 5px;
+    border: none;
+    background-color: white;
+    color: red;
 }
-*/
+
+

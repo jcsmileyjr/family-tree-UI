@@ -50,9 +50,13 @@
         </div>          
       </article>
      <!-- Gather names of the kids -->    
-      <article class="row " id="kids">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
-          <button type="button" class="btn btn-warning" >Add Child</button>
+      <article class="row text-center" id="kids">
+          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Child</div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+            <input type="text" />
+          </div>         
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">  
+          <button type="button" class="btn btn-warning" onclick="addKids()" >Add Child</button>
         </div>
       </article>
       <!-- Submit button to save inputted data and continue to next step (gather names of father side of the family) -->    
@@ -167,6 +171,19 @@
       let maternalFamily = document.getElementById("maternalFamily");
         
       maternalFamily.style.display = "block";
+    } 
+      
+    function addKids(){
+console.log("It worked");        
+      let newChild = document.createElement("input");
+    
+      newChild.setAttribute("type", "text");
+        
+      newChild.classList.add("addChildrenStyle");
+        
+      const kidsDiv = document.getElementById("kids");
+    
+      kidsDiv.append(newChild);
     }  
 
       

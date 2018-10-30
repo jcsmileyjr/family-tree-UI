@@ -50,4 +50,8 @@ input {
     display: block;
 }
 
+.skipParent {
+    background-color: grey;
+}
+
 

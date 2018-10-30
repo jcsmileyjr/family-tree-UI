@@ -33,19 +33,19 @@
         <div class="row paternalWhiteSpace">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Father</div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="currentFather" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipFather()">Skip</button>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Mother</div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="currentMother"/>
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipMother()">Skip</button>
           </div>
         </div>          
       </article>
@@ -80,19 +80,19 @@
         <div class="row paternalWhiteSpace">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="paternalFather" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipFather()">Skip</button>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="paternalMother" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipMother()">Skip</button>
           </div>
         </div>          
       </article>
@@ -127,19 +127,19 @@
         <div class="row paternalWhiteSpace">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="maternalFather" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipFather()">Skip</button>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
           <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
-            <input type="text" />
+            <input type="text" id="maternalMother" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
-            <button type="button" class="btn btn-danger btn-xs">Skip</button>
+            <button type="button" class="btn btn-danger btn-xs" onclick="skipMother()">Skip</button>
           </div>
         </div>          
       </article>
@@ -237,7 +237,47 @@
           
         showChildren(newChild, kidsDiv);            
       }     
-    }  
+    }
+      
+    //function to grey out the father input field based on which family form the user is on. 
+    function skipFather(){
+      if(currentStep === 1){
+        let skipDad = document.getElementById("currentFather");
+          
+        //add a grey background to the input field  
+        skipDad.classList.add("skipParent");
+      }else if(currentStep === 2){
+        let skipDad = document.getElementById("paternalFather");
+          
+        //add a grey background to the input field  
+        skipDad.classList.add("skipParent");          
+      }else{
+        let skipDad = document.getElementById("maternalFather");
+          
+        //add a grey background to the input field  
+        skipDad.classList.add("skipParent");            
+      }    
+    }
+      
+    //function to grey out the mother input field based on which family form the user is on. 
+    function skipMother(){
+      if(currentStep === 1){
+        let skipMom = document.getElementById("currentMother");
+          
+        //add a grey background to the input field  
+        skipMom.classList.add("skipParent");
+      }else if(currentStep === 2){
+        let skipMom = document.getElementById("paternalMother");
+          
+        //add a grey background to the input field  
+        skipMom.classList.add("skipParent");          
+      }else{
+        let skipMom = document.getElementById("maternalMother");
+          
+        //add a grey background to the input field  
+        skipMom.classList.add("skipParent");           
+      }    
+    }    
 
       
   </script>      

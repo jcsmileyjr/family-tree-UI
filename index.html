@@ -161,6 +161,14 @@
     </section>      
   <script>
     
+    //function to place user input curser in the first input box (father) when the app starts  
+	function focusOnFatherInput() {
+		document.getElementById('currentFather').focus();
+	}
+	
+    //Loads the focusing function when the app starts  
+    window.onload = focusOnFatherInput();      
+    
     let currentStep = 1;
       
     //show the paternal family input form and hide the immediate family input form  
@@ -175,6 +183,9 @@
         
       //update currentStep to be use in addKid()
       currentStep = 2;
+        
+      //Set the focus to the first input on the page    
+      document.getElementById('paternalFather').focus();
     }
       
     //show the maternal family input form and hide the paternal family input form  
@@ -188,7 +199,10 @@
       maternalFamily.style.display = "block";
         
       //update currentStep to be use in addKid()
-      currentStep = 3;        
+      currentStep = 3;  
+        
+      //Set the focus to the first input on the page    
+      document.getElementById('maternalFather').focus();        
     }
       
     function showChildren(newChild, kidsDiv){

@@ -253,6 +253,42 @@
       }     
     }
       
+    //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+    const currentChildInput = document.getElementById("currentChildName");
+      
+    //adds a event listner for the enter button to add a child  
+    currentChildInput.addEventListener("keyup", function(event){
+        event.preventDefault();
+        
+        if(event.keyCode === 13){
+            addKids();
+        }
+    });
+      
+    //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+    const currentFatherSiblingInput = document.getElementById("currentFatherSibling");
+      
+    //adds a event listner for the enter button to add a child  
+    currentFatherSiblingInput.addEventListener("keyup", function(event){
+        event.preventDefault();
+        
+        if(event.keyCode === 13){
+            addKids();
+        }
+    });
+      
+    //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+    const currentMotherSiblingInput = document.getElementById("currentMotherSibling");
+      
+    //adds a event listner for the enter button to add a child  
+    currentMotherSiblingInput.addEventListener("keyup", function(event){
+        event.preventDefault();
+        
+        if(event.keyCode === 13){
+            addKids();
+        }
+    });      
+      
     //function to grey out the father input field based on which family form the user is on. 
     function skipFather(){
       if(currentStep === 1){

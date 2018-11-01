@@ -67,14 +67,38 @@ From 490 to 599 the width is smaller and the window is moved to center of page *
   }    
 }
 
-/*Tablets & Desktop or big screen
+/*Tablets & Desktop
 From 600 and up the width is smaller and the window is moved to center of page */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 670px) {
   .centerDiv {
     margin: auto;
     position: absolute;
     top:0; left:0; bottom:0; right:0;
     width: 70%; 
+    height: 80%; 
+  }    
+}
+
+/*Desktop
+From 900 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 900px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 60%; 
+    height: 80%; 
+  }    
+}
+
+/*Super large Desktop
+From 1199 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 1210px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 50%; 
     height: 80%; 
   }    
 }

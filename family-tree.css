@@ -40,7 +40,7 @@ input {
 }
 
 /*hides different sections when not in use*/
-#paternalFamily, #maternalFamily {
+#paternalFamily, #maternalFamily, #familyTree {
     display: none;
 }
 

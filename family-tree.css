@@ -55,6 +55,37 @@ input {
     background-color: grey;
 }
 
+/*************** CSS Grid use to show Family Tree*******************************/
+
+.grid-container {
+ display: grid; /*grid format*/
+ grid-template-columns: auto auto auto auto; /*four cols, this way the 
+ top father and mother areas have equal spacing*/
+ grid-template-areas:  ' king king queen queen ' 
+           ' pawn pawn pawn pawn';
+    grid-column-gap: 10px;
+ grid-row-gap: 15px;
+ justify-items: center; /*align all content in the center horizontally*/           
+}
+
+/*set this div as the first two columns in the top row*/
+.father {
+    grid-area: king; /*giving this class a grid-area name*/
+ grid-column: 1/2;
+}
+
+/*set this div as the last two columns in the top row*/
+.mother {
+    grid-area: queen; /*giving this class a grid-area name*/
+ grid-column: 3/4; 
+}
+
+.children {
+ grid-area: pawn; /*giving this class a grid-area name*/
+}
+
+/*************** End of CSS Grid section for Family Tree*******************************/
+
 /*Tablets & Desktop or big screen
 From 490 to 599 the width is smaller and the window is moved to center of page */
 @media only screen and (min-width: 490px) {

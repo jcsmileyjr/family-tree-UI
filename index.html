@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
     <link rel="stylesheet" href="family-tree.css">  
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+      
     <title>Family Tree Creator</title>
   </head>
   <body class="container-fluid centerDiv">
@@ -169,7 +170,51 @@
           </div>
         </div>
       </header>
-      <article id="mainFamily">Mommy and Daddy</article>
+      <article class="grid-container" id="mainFamily">
+        <div class="father">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-5x"></i>
+            <div class="caption">Father</div>
+          </div>
+        </div>
+        <div class="mother">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-5x"></i>
+            <div class="caption">Mother</div>
+          </div>          
+        </div>
+        <div class="children">
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>           
+        </div>
+        <div class="children">
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>           
+        </div>
+        <div class="children">
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>           
+        </div>
+        <div class="children">
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>           
+        </div>
+        <div class="children">
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>           
+        </div>          
+        
+      </article>
       <article id="maleFamily">Granny and Papa</article>
       <article id="femaleFamily">Nana and Big Daddy</article>    
         
@@ -230,9 +275,6 @@
       let familyTree = document.getElementById("familyTree");
         
       familyTree.style.display = "block";
-        
-      //update currentStep to be use in addKid()
-      currentStep = 4;         
     }      
       
     function showChildren(newChild, kidsDiv){

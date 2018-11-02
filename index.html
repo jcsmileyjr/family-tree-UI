@@ -174,13 +174,13 @@
         <div class="father">
           <div class="thumbnail">
             <i class="fas fa-chess-king fa-5x"></i>
-            <div id="mainFamilyFather" class="caption">Father</div>
+            <div id="mainFamilyFather" class="caption">Unknown</div>
           </div>
         </div>
         <div class="mother">
           <div class="thumbnail">
             <i class="fas fa-chess-queen fa-5x"></i>
-            <div id="mainFamilyMother" class="caption">Mother</div>
+            <div id="mainFamilyMother" class="caption">Unknown</div>
           </div>          
         </div>
         <div class="children">
@@ -302,9 +302,23 @@
       let familyTree = document.getElementById("familyTree");
         
       familyTree.style.display = "block";
-    }      
+        
+      immediateFamilyTree();    
+    } 
       
-    //receievd as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box  
+    //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
+    function immediateFamilyTree(){
+      const mainFather = document.getElementById("mainFamilyFather");
+        
+      mainFather.innerHTML = savedCurrentFamily[0];
+        
+      const mainMother = document.getElementById("mainFamilyMother");
+        
+      mainMother.innerHTML = savedCurrentFamily[1];        
+        
+    }  
+      
+    //receievd as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box
     function showChildren(newChild, kidsDiv){
       //create a new html element to display the child's name
       let displayName = document.createElement("strong")

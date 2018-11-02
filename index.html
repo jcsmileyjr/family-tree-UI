@@ -268,7 +268,7 @@
         
       //update currentStep to be use in addKid()
       currentStep = 2;
-        
+saveCurrentFamily();        
       //Set the focus to the first input on the page    
       document.getElementById('paternalFather').focus();
     }
@@ -347,6 +347,16 @@
           
         showChildren(newChild, kidsDiv);            
       }     
+    }
+     
+    let savedCurrentFamily = [];  
+      
+    //get inputted data, place in a array to be displayed in the family tree
+    function saveCurrentFamily(){
+      savedCurrentFamily.push(document.getElementById("currentFather").value);
+        
+      savedCurrentFamily.push(document.getElementById("currentMother").value);      
+      console.log(savedCurrentFamily);
     }
       
     //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  

@@ -183,32 +183,6 @@
             <div id="mainFamilyMother" class="caption">Unknown</div>
           </div>          
         </div>
-        <div class="children">
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div>
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div> 
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div>
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div> 
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div> 
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div>             
-        </div>
         <div id="mainFamilyKids" class="children"></div>  
       </article>
       <article class="grid-container"  id="maleFamily">
@@ -310,14 +284,40 @@
     function immediateFamilyTree(){
       const mainFather = document.getElementById("mainFamilyFather");
         
+      //Use the first spot in the array to display  the father name
       mainFather.innerHTML = savedCurrentFamily[0];
         
+      //Use the second spot in the array to display  the mother name        
       const mainMother = document.getElementById("mainFamilyMother");
         
-      mainMother.innerHTML = savedCurrentFamily[1];        
+      mainMother.innerHTML = savedCurrentFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedCurrentFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedCurrentFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const mainChildren = document.getElementById("mainFamilyKids");
+          
+        mainChildren.append(childDiv);
+      }//end of for-loop
         
     }  
-      
+/*      This is the way the above function suppose to look
+          <div class="thumbnail">
+            <i class="fas fa-chess-pawn fa-5x"></i>
+            <div class="caption">Child</div>
+          </div>        
+*/      
     //receievd as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box
     function showChildren(newChild, kidsDiv){
       //create a new html element to display the child's name

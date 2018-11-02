@@ -268,7 +268,10 @@
         
       //update currentStep to be use in addKid()
       currentStep = 2;
-saveCurrentFamily();        
+
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      saveCurrentFamily();        
+        
       //Set the focus to the first input on the page    
       document.getElementById('paternalFather').focus();
     }
@@ -301,6 +304,7 @@ saveCurrentFamily();
       familyTree.style.display = "block";
     }      
       
+    //receievd as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box  
     function showChildren(newChild, kidsDiv){
       //create a new html element to display the child's name
       let displayName = document.createElement("strong")
@@ -329,6 +333,10 @@ saveCurrentFamily();
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showKids");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily array later to be displayed in the family tree.
+        saveCurrentKids();
+        
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.   
         showChildren(newChild, kidsDiv); 
           
       }else if(currentStep === 2){
@@ -337,6 +345,7 @@ saveCurrentFamily();
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showFatherSiblings");
           
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);
           
       }else {
@@ -345,19 +354,31 @@ saveCurrentFamily();
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showMotherSiblings");
           
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);            
       }     
     }
      
-    let savedCurrentFamily = [];  
+    let savedCurrentFamily = []; //array to hold the entire names of current family members to be display in the family tree
       
-    //get inputted data, place in a array to be displayed in the family tree
+    let savedCurrentKids = []; //array to hold all the kids names of the current family
+      
+    let savedCurrentParents = []; //array to hold both parents names of the current family
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
     function saveCurrentFamily(){
-      savedCurrentFamily.push(document.getElementById("currentFather").value);
+      savedCurrentParents.push(document.getElementById("currentFather").value);
         
-      savedCurrentFamily.push(document.getElementById("currentMother").value);      
-      console.log(savedCurrentFamily);
+      savedCurrentParents.push(document.getElementById("currentMother").value); 
+        
+      savedCurrentFamily = savedCurrentParents.concat(savedCurrentKids);    
+
     }
+      
+    //save the kids names to an array to be added later to the family array.
+    function saveCurrentKids(){
+      savedCurrentKids.push(document.getElementById("currentChildName").value);    
+    }      
       
     //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
     const currentChildInput = document.getElementById("currentChildName");

@@ -44,6 +44,21 @@ input {
     display: none;
 }
 
+/*****************Colors for Family Tree Icons *****/
+
+.fa-chess-king {
+    color: navy;
+}
+
+.fa-chess-queen {
+    color: deeppink;
+}
+
+.fa-chess-pawn {
+    color: darkgreen;
+}
+/****************************************************/
+
 /*add white-space and a new line for each child added*/
 .addChildrenStyle {
     margin-top: 15px;

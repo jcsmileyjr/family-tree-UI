@@ -240,14 +240,19 @@
         
       paternalFamily.style.display = "block";
         
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      saveCurrentFamily();  
+        
       //update currentStep to be use in addKid()
       currentStep = 2;
-
-      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
-      saveCurrentFamily();        
-        
+              
       //Set the focus to the first input on the page    
       document.getElementById('paternalFather').focus();
+        
+//Testing
+console.log("current kids " + savedCurrentKids);
+console.log("current parents " + savedCurrentParents);
+console.log("current parents " + savedCurrentFamily);        
     }
       
     //show the maternal family input form and hide the paternal family input form  
@@ -260,11 +265,19 @@
         
       maternalFamily.style.display = "block";
         
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      savePaternalFamily();         
+        
       //update currentStep to be use in addKid()
-      currentStep = 3;  
+      currentStep = 3;
         
       //Set the focus to the first input on the page    
-      document.getElementById('maternalFather').focus();        
+      document.getElementById('maternalFather').focus();
+        
+//Testing
+console.log("current paternal kids " + savedCurrentKids);
+console.log("current paternal parents " + savedCurrentParents);
+console.log("current paternal parents " + savedPaternalFamily);        
     }
       
     //show the family tree  
@@ -277,7 +290,11 @@
         
       familyTree.style.display = "block";
         
-      immediateFamilyTree();    
+      //dynamic load the paternal family tree        
+      immediateFamilyTree();
+        
+      //dynamic load the paternal family tree
+      paternalFamilyTree();    
     } 
       
     //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
@@ -313,7 +330,45 @@
         mainChildren.append(childDiv);
       }//end of for-loop
         
-    }  
+    }
+      
+    let savedPaternalFamily = []; //array to hold the entire names of current family members to be display in the family tree      
+      
+    //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
+    function paternalFamilyTree(){
+      const paternalFather = document.getElementById("paternalFamilyFather");
+        
+      //Use the first spot in the array to display  the father name
+      paternalFather.innerHTML = savedPaternalFamily[0];
+        
+      //Use the second spot in the array to display  the mother name        
+      const paternalMother = document.getElementById("paternalFamilyMother");
+        
+      paternalMother.innerHTML = savedPaternalFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedPaternalFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedPaternalFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const paternalmainChildren = document.getElementById("paternalFamilyKids");
+          
+        paternalmainChildren.append(childDiv);
+      }//end of for-loop
+        
+    }//end of paternalFamilyTree()
+      
 /*      This is the way the above function suppose to look
           <div class="thumbnail">
             <i class="fas fa-chess-pawn fa-5x"></i>
@@ -349,7 +404,7 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showKids");
           
-        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily array later to be displayed in the family tree.
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
         saveCurrentKids();
         
         //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.   
@@ -361,6 +416,9 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showFatherSiblings");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
+        saveCurrentKids();          
+          
         //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);
           
@@ -370,6 +428,9 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showMotherSiblings");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
+        saveCurrentKids();          
+          
         //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);            
       }     
@@ -377,9 +438,9 @@
      
     let savedCurrentFamily = []; //array to hold the entire names of current family members to be display in the family tree
       
-    let savedCurrentKids = []; //array to hold all the kids names of the current family
+    let savedCurrentKids = []; //array to hold all the kids names 
       
-    let savedCurrentParents = []; //array to hold both parents names of the current family
+    let savedCurrentParents = []; //array to hold both parents names
       
     //get inputted data for the parents, place in a array to be displayed in the family tree
     function saveCurrentFamily(){
@@ -387,13 +448,38 @@
         
       savedCurrentParents.push(document.getElementById("currentMother").value); 
         
-      savedCurrentFamily = savedCurrentParents.concat(savedCurrentKids);    
+      savedCurrentFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
 
+    }
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
+    function savePaternalFamily(){
+      savedCurrentParents.push(document.getElementById("paternalFather").value);
+        
+      savedCurrentParents.push(document.getElementById("paternalMother").value); 
+        
+      savedPaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
+
+    }      
+      
+    function resetSavedKidsParentsArray(){
+        savedCurrentKids = [];
+        savedCurrentParents = [];
     }
       
     //save the kids names to an array to be added later to the family array.
     function saveCurrentKids(){
-      savedCurrentKids.push(document.getElementById("currentChildName").value);    
+      if(currentStep===1){
+        savedCurrentKids.push(document.getElementById("currentChildName").value);          
+      }else if(currentStep ===2){
+        savedCurrentKids.push(document.getElementById("currentFatherSibling").value);           
+      }else {
+        savedCurrentKids.push(document.getElementById("currentMotherSibling").value);           
+      }    
     }      
       
     //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  

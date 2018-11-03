@@ -250,8 +250,6 @@
       document.getElementById('paternalFather').focus();
         
 //Testing
-console.log("current kids " + savedCurrentKids);
-console.log("current parents " + savedCurrentParents);
 console.log("current parents " + savedCurrentFamily);        
     }
       
@@ -275,13 +273,16 @@ console.log("current parents " + savedCurrentFamily);
       document.getElementById('maternalFather').focus();
         
 //Testing
-console.log("current paternal kids " + savedCurrentKids);
-console.log("current paternal parents " + savedCurrentParents);
 console.log("current paternal parents " + savedPaternalFamily);        
     }
       
     //show the family tree  
     function showFamilyTree(){
+//Testing
+console.log("current maternal parents " + savedMaternalFamily);         
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      saveMaternalFamily();  
+        
       let maternalFamily = document.getElementById("maternalFamily");
       
       maternalFamily.style.display = "none";
@@ -294,7 +295,10 @@ console.log("current paternal parents " + savedPaternalFamily);
       immediateFamilyTree();
         
       //dynamic load the paternal family tree
-      paternalFamilyTree();    
+      paternalFamilyTree();
+        
+      //dynamic load the maternal family tree
+      maternalFamilyTree();          
     } 
       
     //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
@@ -369,13 +373,44 @@ console.log("current paternal parents " + savedPaternalFamily);
         
     }//end of paternalFamilyTree()
       
-/*      This is the way the above function suppose to look
-          <div class="thumbnail">
-            <i class="fas fa-chess-pawn fa-5x"></i>
-            <div class="caption">Child</div>
-          </div>        
-*/      
-    //receievd as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box
+    let savedMaternalFamily = []; //array to hold the entire names of current family members to be display in the family tree      
+      
+    //function use in the showFamilyTree() to append names of the maternal family members to the trees in the family tree
+    function maternalFamilyTree(){
+      const maternalFather = document.getElementById("maternalFamilyFather");
+        
+      //Use the first spot in the array to display  the mother name
+      maternalFather.innerHTML = savedMaternalFamily[0];
+        
+      //Use the second spot in the array to display  the mother name        
+      const maternalMother = document.getElementById("maternalFamilyMother");
+        
+      maternalMother.innerHTML = savedMaternalFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedMaternalFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedMaternalFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const maternalmainChildren = document.getElementById("maternalFamilyKids");
+          
+        maternalmainChildren.append(childDiv);
+      }//end of for-loop
+        
+    }//end of maternalFamilyTree()
+      
+    //received as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box
     function showChildren(newChild, kidsDiv){
       //create a new html element to display the child's name
       let displayName = document.createElement("strong")
@@ -464,7 +499,19 @@ console.log("current paternal parents " + savedPaternalFamily);
         
       resetSavedKidsParentsArray();
 
-    }      
+    }
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
+    function saveMaternalFamily(){
+      savedCurrentParents.push(document.getElementById("maternalFather").value);
+        
+      savedCurrentParents.push(document.getElementById("maternalMother").value); 
+        
+      savedMaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
+
+    }       
       
     function resetSavedKidsParentsArray(){
         savedCurrentKids = [];

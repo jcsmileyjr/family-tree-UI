@@ -76,7 +76,8 @@ input {
     display: grid; /*grid format*/
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
-    grid-template-areas:  ' king king queen queen ' 
+    grid-template-areas: 'title title title title'     
+                       ' king king queen queen ' 
                        ' pawn pawn pawn pawn ';
     grid-column-gap: 10px;
     grid-row-gap: 15px;
@@ -84,18 +85,24 @@ input {
     justify-items: center; /*align all content in the center horizontally*/   
 }
 
+.familyTitle {
+    grid-area: title;
+    grid-column: 1/4;
+    grid-row: 1
+}
+
 /*set this div as the first two columns in the top row*/
 .father {
     grid-area: king; /*giving this class a grid-area name*/
     grid-column: 1/2;
-    grid-row: 1;  
+    grid-row: 2;  
 }
 
 /*set this div as the last two columns in the top row*/
 .mother {
     grid-area: queen; /*giving this class a grid-area name*/
     grid-column: 3/4; 
-    grid-row: 1;
+    grid-row: 2;
 }
 
 .children {

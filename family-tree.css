@@ -163,4 +163,15 @@ From 1199 and up the width is smaller and the window is moved to center of page 
   }    
 }
 
+/*Super large Desktop
+From 1500 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 1750px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 40%; 
+    height: 80%; 
+  }    
+}
 

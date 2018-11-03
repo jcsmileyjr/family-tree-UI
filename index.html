@@ -252,6 +252,9 @@
         
       paternalFamily.style.display = "block";
         
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();    
+        
       //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
       saveCurrentFamily();  
         
@@ -271,6 +274,9 @@
       let maternalFamily = document.getElementById("maternalFamily");
         
       maternalFamily.style.display = "block";
+        
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();          
         
       //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
       savePaternalFamily();         
@@ -295,6 +301,9 @@
       let familyTree = document.getElementById("familyTree");
         
       familyTree.style.display = "block";
+        
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();          
         
       //dynamic load the paternal family tree        
       immediateFamilyTree();
@@ -572,7 +581,32 @@
         if(event.keyCode === 13){
             addKids();
         }
-    });      
+    });
+      
+    function checkForKids(){
+      if(currentStep === 1){
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentChildInput = document.getElementById("currentChildName");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }      
+      }else if(currentStep === 2){
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentFatherSiblingInput = document.getElementById("currentFatherSibling");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }           
+      }else{
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentMotherSiblingInput = document.getElementById("currentMotherSibling");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }           
+      }    
+    }  
       
     //function to grey out the father input field based on which family form the user is on. 
     function skipFather(){

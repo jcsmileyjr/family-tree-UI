@@ -247,10 +247,7 @@
       currentStep = 2;
               
       //Set the focus to the first input on the page    
-      document.getElementById('paternalFather').focus();
-        
-//Testing
-console.log("current parents " + savedCurrentFamily);        
+      document.getElementById('paternalFather').focus();      
     }
       
     //show the maternal family input form and hide the paternal family input form  
@@ -270,16 +267,12 @@ console.log("current parents " + savedCurrentFamily);
       currentStep = 3;
         
       //Set the focus to the first input on the page    
-      document.getElementById('maternalFather').focus();
-        
-//Testing
-console.log("current paternal parents " + savedPaternalFamily);        
+      document.getElementById('maternalFather').focus();        
     }
       
     //show the family tree  
     function showFamilyTree(){
-//Testing
-console.log("current maternal parents " + savedMaternalFamily);         
+        
       //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
       saveMaternalFamily();  
         
@@ -483,6 +476,7 @@ console.log("current maternal parents " + savedMaternalFamily);
         
       savedCurrentParents.push(document.getElementById("currentMother").value); 
         
+      //combine kids names behind the parents names in the family arrays         
       savedCurrentFamily = savedCurrentParents.concat(savedCurrentKids); 
         
       resetSavedKidsParentsArray();
@@ -494,7 +488,8 @@ console.log("current maternal parents " + savedMaternalFamily);
       savedCurrentParents.push(document.getElementById("paternalFather").value);
         
       savedCurrentParents.push(document.getElementById("paternalMother").value); 
-        
+
+      //combine kids names behind the parents names in the family arrays         
       savedPaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
         
       resetSavedKidsParentsArray();
@@ -507,12 +502,14 @@ console.log("current maternal parents " + savedMaternalFamily);
         
       savedCurrentParents.push(document.getElementById("maternalMother").value); 
         
+      //combine kids names behind the parents names in the family arrays    
       savedMaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
         
       resetSavedKidsParentsArray();
 
     }       
       
+    //reset the arrays used when saving names to family arrays   
     function resetSavedKidsParentsArray(){
         savedCurrentKids = [];
         savedCurrentParents = [];

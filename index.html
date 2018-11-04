@@ -5,17 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
       
     <link rel="stylesheet" href="family-tree.css">  
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+      
     <title>Family Tree Creator</title>
   </head>
   <body class="container-fluid centerDiv">
@@ -23,7 +24,8 @@
     <section id="immediateFamily" class="centerDiv">  
       <header id="currentLocation">
         <div class="row">    
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <h2>My Family Tree</h2>  
             <strong id="showCurrentStep">Step 1/3: Immediate Family</strong>
           </div>
         </div>
@@ -32,7 +34,7 @@
       <article id="parents">
         <div class="row paternalWhiteSpace">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Father</div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="currentFather" tabindex="1" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -41,7 +43,7 @@
         </div>
         <div class="row">
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">Mother</div>
-          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="currentMother" tabindex="2"/>
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -70,7 +72,8 @@
     <section id="paternalFamily">  
       <header>
         <div class="row">    
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"> 
+            <h2>My Family Tree</h2>   
             <strong id="showCurrentStep">Step 2/3: Paternal Family</strong>
           </div>
         </div>
@@ -79,7 +82,7 @@
       <article id="paternalParents">
         <div class="row paternalWhiteSpace">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
-          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="paternalFather" tabindex="4" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
@@ -88,7 +91,7 @@
         </div>
         <div class="row">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
-          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="paternalMother" tabindex="5" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
@@ -117,7 +120,8 @@
     <section id="maternalFamily">  
       <header>
         <div class="row">    
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">  
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center"> 
+            <h2>My Family Tree</h2> 
             <strong id="showCurrentStep">Step 3/3: Maternal Family</strong>
           </div>
         </div>
@@ -126,7 +130,7 @@
       <article id="maternalParents">
         <div class="row paternalWhiteSpace">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-father</div>
-          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="maternalFather" tabindex="7" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
@@ -135,7 +139,7 @@
         </div>
         <div class="row">
           <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">Grand-mother</div>
-          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-3">
+          <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6">
             <input type="text" id="maternalMother" tabindex="8" />
           </div> 
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 text-right">
@@ -156,9 +160,76 @@
       </article>         
       <!-- Submit button to save inputted data and continue to next step (create family tree) -->    
       <footer class="text-center" id="continue">          
-          <button type="button" class="btn btn-success">Create Family Tree</button>              
+          <button type="button" class="btn btn-success" onclick="showFamilyTree()">Create Family Tree</button>              
       </footer>
-    </section>      
+    </section>
+
+    <!-- Display family tree for immediate family, paternal, and maternal relationships -->  
+    <section id="familyTree">  
+      <header>
+        <div class="row">    
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+            <h2>My Family Tree</h2>
+          </div>
+        </div>
+      </header>
+      <article class="grid-container" id="mainFamily">
+        <header class="familyTitle text-center">   
+          <strong >Current Family Tree</strong>
+        </header>          
+        <div class="father">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-5x"></i>
+            <div id="mainFamilyFather" class="caption">Unknown</div>
+          </div>
+        </div>
+        <div class="mother">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-5x"></i>
+            <div id="mainFamilyMother" class="caption">Unknown</div>
+          </div>          
+        </div>
+        <div id="mainFamilyKids" class="children"></div>  
+      </article>
+      <article class="grid-container"  id="maleFamily">
+        <header class="familyTitle text-center">   
+          <strong >Paternal Family Tree</strong>
+        </header>          
+        <div class="father">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-5x"></i>
+            <div id="paternalFamilyFather" class="caption">Father</div>
+          </div>
+        </div>
+        <div class="mother">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-5x"></i>
+            <div id="paternalFamilyMother" class="caption">Mother</div>
+          </div>          
+        </div> 
+        <div id="paternalFamilyKids" class="children"></div>
+      </article>
+      <article class="grid-container"  id="femaleFamily">
+        <header class="familyTitle text-center">   
+          <strong >Maternal Family Tree</strong>
+        </header>          
+        <div class="father">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-5x"></i>
+            <div id="maternalFamilyFather" class="caption">Father</div>
+          </div>
+        </div>
+        <div class="mother">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-5x"></i>
+            <div id="maternalFamilyMother" class="caption">Mother</div>
+          </div>          
+        </div>
+        <div id="maternalFamilyKids" class="children"></div>  
+      </article>    
+        
+    </section>
+      
   <script>
     
     //function to place user input curser in the first input box (father) when the app starts  
@@ -181,11 +252,17 @@
         
       paternalFamily.style.display = "block";
         
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();    
+        
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      saveCurrentFamily();  
+        
       //update currentStep to be use in addKid()
       currentStep = 2;
-        
+              
       //Set the focus to the first input on the page    
-      document.getElementById('paternalFather').focus();
+      document.getElementById('paternalFather').focus();      
     }
       
     //show the maternal family input form and hide the paternal family input form  
@@ -198,13 +275,156 @@
         
       maternalFamily.style.display = "block";
         
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();          
+        
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      savePaternalFamily();         
+        
       //update currentStep to be use in addKid()
-      currentStep = 3;  
+      currentStep = 3;
         
       //Set the focus to the first input on the page    
       document.getElementById('maternalFather').focus();        
     }
       
+    //show the family tree  
+    function showFamilyTree(){
+        
+      //Saves the current family names to the savedCurrentFamily array to be displayed later in the family tree.    
+      saveMaternalFamily();  
+        
+      let maternalFamily = document.getElementById("maternalFamily");
+      
+      maternalFamily.style.display = "none";
+        
+      let familyTree = document.getElementById("familyTree");
+        
+      familyTree.style.display = "block";
+        
+      //when the user pres the button to continue to go to the next page, this check to see if a child is there
+      checkForKids();          
+        
+      //dynamic load the paternal family tree        
+      immediateFamilyTree();
+        
+      //dynamic load the paternal family tree
+      paternalFamilyTree();
+        
+      //dynamic load the maternal family tree
+      maternalFamilyTree();          
+    } 
+      
+    //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
+    function immediateFamilyTree(){
+      const mainFather = document.getElementById("mainFamilyFather");
+        
+      //Use the first spot in the array to display  the father name
+      mainFather.innerHTML = savedCurrentFamily[0];
+        
+      //Use the second spot in the array to display  the mother name        
+      const mainMother = document.getElementById("mainFamilyMother");
+        
+      mainMother.innerHTML = savedCurrentFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedCurrentFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedCurrentFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const mainChildren = document.getElementById("mainFamilyKids");
+          
+        mainChildren.append(childDiv);
+      }//end of for-loop
+        
+    }
+      
+    let savedPaternalFamily = []; //array to hold the entire names of current family members to be display in the family tree      
+      
+    //function use in the showFamilyTree() to append names of the current family members to the trees in the family tree
+    function paternalFamilyTree(){
+      const paternalFather = document.getElementById("paternalFamilyFather");
+        
+      //Use the first spot in the array to display  the father name
+      paternalFather.innerHTML = savedPaternalFamily[0];
+        
+      //Use the second spot in the array to display  the mother name        
+      const paternalMother = document.getElementById("paternalFamilyMother");
+        
+      paternalMother.innerHTML = savedPaternalFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedPaternalFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedPaternalFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const paternalmainChildren = document.getElementById("paternalFamilyKids");
+          
+        paternalmainChildren.append(childDiv);
+      }//end of for-loop
+        
+    }//end of paternalFamilyTree()
+      
+    let savedMaternalFamily = []; //array to hold the entire names of current family members to be display in the family tree      
+      
+    //function use in the showFamilyTree() to append names of the maternal family members to the trees in the family tree
+    function maternalFamilyTree(){
+      const maternalFather = document.getElementById("maternalFamilyFather");
+        
+      //Use the first spot in the array to display  the mother name
+      maternalFather.innerHTML = savedMaternalFamily[0];
+        
+      //Use the second spot in the array to display  the mother name        
+      const maternalMother = document.getElementById("maternalFamilyMother");
+        
+      maternalMother.innerHTML = savedMaternalFamily[1];
+        
+      //Use an array to cycle through kids names to be displayead        
+      for(var i=2; i<savedMaternalFamily.length; i++){
+        let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("thumbnail");
+          
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+          
+        let childNameDiv = document.createElement("div");
+          
+        childNameDiv.classList.add("caption");
+          
+        childNameDiv.innerHTML = savedMaternalFamily[i];
+        
+        childDiv.append(childNameDiv);
+          
+        const maternalmainChildren = document.getElementById("maternalFamilyKids");
+          
+        maternalmainChildren.append(childDiv);
+      }//end of for-loop
+        
+    }//end of maternalFamilyTree()
+      
+    //received as parameters the child name and where the name will be appended. The function will then display the name inside a html element and refocus the user mouse to the child input name box
     function showChildren(newChild, kidsDiv){
       //create a new html element to display the child's name
       let displayName = document.createElement("strong")
@@ -233,6 +453,10 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showKids");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
+        saveCurrentKids();
+        
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.   
         showChildren(newChild, kidsDiv); 
           
       }else if(currentStep === 2){
@@ -241,6 +465,10 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showFatherSiblings");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
+        saveCurrentKids();          
+          
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);
           
       }else {
@@ -249,9 +477,75 @@
         //get the kids div of the UI
         const kidsDiv = document.getElementById("showMotherSiblings");
           
+        //Save the child name to the savedCurrentKids array. This array is added to the savedCurrentFamily (or paternal/maternal) array later to be displayed in the family tree.
+        saveCurrentKids();          
+          
+        //Use the child name and place to show the name as parameters. This is use to display the kids names as they are entered.
         showChildren(newChild, kidsDiv);            
       }     
     }
+     
+    let savedCurrentFamily = []; //array to hold the entire names of current family members to be display in the family tree
+      
+    let savedCurrentKids = []; //array to hold all the kids names 
+      
+    let savedCurrentParents = []; //array to hold both parents names
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
+    function saveCurrentFamily(){
+      savedCurrentParents.push(document.getElementById("currentFather").value);
+        
+      savedCurrentParents.push(document.getElementById("currentMother").value); 
+        
+      //combine kids names behind the parents names in the family arrays         
+      savedCurrentFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
+
+    }
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
+    function savePaternalFamily(){
+      savedCurrentParents.push(document.getElementById("paternalFather").value);
+        
+      savedCurrentParents.push(document.getElementById("paternalMother").value); 
+
+      //combine kids names behind the parents names in the family arrays         
+      savedPaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
+
+    }
+      
+    //get inputted data for the parents, place in a array to be displayed in the family tree
+    function saveMaternalFamily(){
+      savedCurrentParents.push(document.getElementById("maternalFather").value);
+        
+      savedCurrentParents.push(document.getElementById("maternalMother").value); 
+        
+      //combine kids names behind the parents names in the family arrays    
+      savedMaternalFamily = savedCurrentParents.concat(savedCurrentKids); 
+        
+      resetSavedKidsParentsArray();
+
+    }       
+      
+    //reset the arrays used when saving names to family arrays   
+    function resetSavedKidsParentsArray(){
+        savedCurrentKids = [];
+        savedCurrentParents = [];
+    }
+      
+    //save the kids names to an array to be added later to the family array.
+    function saveCurrentKids(){
+      if(currentStep===1){
+        savedCurrentKids.push(document.getElementById("currentChildName").value);          
+      }else if(currentStep ===2){
+        savedCurrentKids.push(document.getElementById("currentFatherSibling").value);           
+      }else {
+        savedCurrentKids.push(document.getElementById("currentMotherSibling").value);           
+      }    
+    }      
       
     //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
     const currentChildInput = document.getElementById("currentChildName");
@@ -287,7 +581,32 @@
         if(event.keyCode === 13){
             addKids();
         }
-    });      
+    });
+      
+    function checkForKids(){
+      if(currentStep === 1){
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentChildInput = document.getElementById("currentChildName");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }      
+      }else if(currentStep === 2){
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentFatherSiblingInput = document.getElementById("currentFatherSibling");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }           
+      }else{
+        //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  
+        const currentMotherSiblingInput = document.getElementById("currentMotherSibling");
+          
+        if(currentChildInput.value !== ""){
+          addKids();    
+        }           
+      }    
+    }  
       
     //function to grey out the father input field based on which family form the user is on. 
     function skipFather(){

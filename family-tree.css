@@ -40,9 +40,24 @@ input {
 }
 
 /*hides different sections when not in use*/
-#paternalFamily, #maternalFamily {
+#paternalFamily, #maternalFamily, #familyTree {
     display: none;
 }
+
+/*****************Colors for Family Tree Icons *****/
+
+.fa-chess-king {
+    color: navy;
+}
+
+.fa-chess-queen {
+    color: deeppink;
+}
+
+.fa-chess-pawn {
+    color: darkgreen;
+}
+/****************************************************/
 
 /*add white-space and a new line for each child added*/
 .addChildrenStyle {
@@ -54,6 +69,51 @@ input {
 .skipParent {
     background-color: grey;
 }
+
+/*************** CSS Grid use to show Family Tree*******************************/
+
+.grid-container {
+    display: grid; /*grid format*/
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-template-areas: 'title title title title'     
+                       ' king king queen queen ' 
+                       ' pawn pawn pawn pawn ';
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    justify-content:center;
+    justify-items: center; /*align all content in the center horizontally*/   
+}
+
+.familyTitle {
+    grid-area: title;
+    grid-column: 1/4;
+    grid-row: 1
+}
+
+/*set this div as the first two columns in the top row*/
+.father {
+    grid-area: king; /*giving this class a grid-area name*/
+    grid-column: 1/2;
+    grid-row: 2;  
+}
+
+/*set this div as the last two columns in the top row*/
+.mother {
+    grid-area: queen; /*giving this class a grid-area name*/
+    grid-column: 3/4; 
+    grid-row: 2;
+}
+
+.children {
+    grid-area: pawn; /*giving this class a grid-area name*/ 
+    display: grid;
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 10px;     
+}
+
+/*************** End of CSS Grid section for Family Tree*******************************/
 
 /*Tablets & Desktop or big screen
 From 490 to 599 the width is smaller and the window is moved to center of page */
@@ -67,9 +127,9 @@ From 490 to 599 the width is smaller and the window is moved to center of page *
   }    
 }
 
-/*Tablets & Desktop or big screen
+/*Tablets & Desktop
 From 600 and up the width is smaller and the window is moved to center of page */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 670px) {
   .centerDiv {
     margin: auto;
     position: absolute;
@@ -79,4 +139,39 @@ From 600 and up the width is smaller and the window is moved to center of page *
   }    
 }
 
+/*Desktop
+From 900 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 900px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 60%; 
+    height: 80%; 
+  }    
+}
+
+/*Super large Desktop
+From 1199 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 1210px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 50%; 
+    height: 80%; 
+  }    
+}
+
+/*Super large Desktop
+From 1500 and up the width is smaller and the window is moved to center of page */
+@media only screen and (min-width: 1750px) {
+  .centerDiv {
+    margin: auto;
+    position: absolute;
+    top:0; left:0; bottom:0; right:0;
+    width: 40%; 
+    height: 80%; 
+  }    
+}
 

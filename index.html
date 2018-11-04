@@ -583,6 +583,21 @@
         }
     });
       
+    //add a event lister to all input elements to capitalize the first letter of each word and lower case all remaining letter
+    let allInputs = document.querySelectorAll("input[type=text]");
+      
+    allInputs.forEach(function(input){
+        input.addEventListener("keyup", function(event){
+           input.value = input.value.toUpperCase(); 
+        });
+    });
+      
+    function properNames(input){
+      var oldName = document.getElementById(input);
+        
+      oldName.value = oldName.value.toUpperCase();
+    }
+      
     function checkForKids(){
       if(currentStep === 1){
         //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  

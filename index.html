@@ -583,6 +583,49 @@
         }
     });
       
+    //find all input elements
+    let allInputs = document.querySelectorAll("input[type=text]");
+     
+    //add a event lister to all input elements to capitalize the first letter of each word and lower case all remaining letter 
+    allInputs.forEach(function(input){
+        input.addEventListener("keyup", function(event){
+          let currentWord = input.value.toLowerCase(); //first lower case all letters
+       
+          //find the first letter in the string    
+          const getFirstLetter = currentWord.charAt(0);
+            
+          //caitalize the first letter    
+          const newFirstLetter = getFirstLetter.toUpperCase();    
+    
+          //replace the old first letter of the word with a capitalize one    
+          let newName = currentWord.replace(getFirstLetter, newFirstLetter);
+            
+          input.value = newName;
+            
+          if(newName.search(" ") > -1){
+            let currentLastNameLetterPosition = newName.search(" ") + 1;
+              
+            //find the first letter in the string    
+            const getLastNameFirstLetter = newName.charAt(currentLastNameLetterPosition);
+            
+            //caitalize the first letter    
+            const newLastNameFirstLetter = getLastNameFirstLetter.toUpperCase(); 
+
+            //split the string into a array  
+            const arrayOfLetters = newName.split("");
+ 
+            //replace the first position of the last name in the array with a capitalize letter  
+            arrayOfLetters[currentLastNameLetterPosition] = newLastNameFirstLetter;
+              
+            //combine the array into a single sring
+            const newLastName = arrayOfLetters.join("");
+
+            input.value = newLastName;  
+            
+          }    
+        });
+    });
+      
     function checkForKids(){
       if(currentStep === 1){
         //Set a varible to hold input containing kids name to be use to add a event listener for the enter button  

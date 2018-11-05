@@ -76,9 +76,11 @@ input {
     display: grid; /*grid format*/
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
-    grid-template-areas: 'title title title title'     
-                       ' king king queen queen ' 
-                       ' pawn pawn pawn pawn ';
+    grid-template-areas: 
+        'PK PQ MK MQ' 
+        ' pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
+        'father father mother mother'
+        'pawn pawn pawn pawn';
     grid-column-gap: 10px;
     grid-row-gap: 15px;
     justify-content:center;
@@ -87,22 +89,64 @@ input {
 
 .familyTitle {
     grid-area: title;
-    grid-column: 1/4;
-    grid-row: 1
+    grid-column: ;
+    grid-row: 
+}
+
+.paternalDad {
+  grid-area: PK;
+    grid-column: 1/2;
+    grid-row: 1;     
+}
+
+.paternalMom {
+  grid-area: PQ;
+    grid-column: 3/4;
+    grid-row: 1;     
+}
+
+.maternalDad{
+  grid-area: MK;
+    grid-column: 5/6;
+    grid-row: 1;     
+}
+
+.maternalMom {
+  grid-area: MQ;
+    grid-column: 7/8;
+    grid-row: 1;     
 }
 
 /*set this div as the first two columns in the top row*/
 .father {
     grid-area: king; /*giving this class a grid-area name*/
     grid-column: 1/2;
-    grid-row: 2;  
+    grid-row: 3;  
 }
 
 /*set this div as the last two columns in the top row*/
 .mother {
     grid-area: queen; /*giving this class a grid-area name*/
     grid-column: 3/4; 
-    grid-row: 2;
+    grid-row: 3;
+}
+
+.childrenPaternal {
+    grid-area: pawnPaternal; /*giving this class a grid-area name*/ 
+    display: grid;
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 10px;    
+    background-color: navy;
+}
+
+.childrenMaternal {
+    grid-area: pawnMaternal; /*giving this class a grid-area name*/ 
+    display: grid;
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 10px; 
+    background-color: red;
 }
 
 .children {
@@ -111,6 +155,8 @@ input {
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
     grid-column-gap: 10px;     
+    grid-column-gap: 10px; 
+    background-color: purple;
 }
 
 /*************** End of CSS Grid section for Family Tree*******************************/

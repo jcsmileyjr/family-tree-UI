@@ -173,61 +173,98 @@
           </div>
         </div>
       </header>
-      <article class="grid-container" id="mainFamily">
-        <header class="familyTitle text-center">   
-          <strong >Current Family Tree</strong>
-        </header>          
+    <article class="grid-container" id="sires">
+        <div class="paternalDad">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-2x"></i>
+            <div id="paternalFamilyFather" class="caption">Paternal Dad</div>
+          </div>
+        </div>
+        <div class="paternalMom">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-2x"></i>
+            <div id="paternalFamilyMother" class="caption">Paternal Mom</div>
+          </div>          
+        </div> 
+        <div id="paternalFamilyKids" class="childrenPaternal"></div>
+        <div class="maternalDad">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-2x"></i>
+            <div id="maternalFamilyFather" class="caption">Maternal Dad</div>
+          </div>
+        </div>
+        <div class="maternalMom">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-2x"></i>
+            <div id="maternalFamilyMother" class="caption">Maternal Mom</div>
+          </div>          
+        </div>
+        <div id="maternalFamilyKids" class="childrenMaternal"></div>
         <div class="father">
           <div class="thumbnail">
-            <i class="fas fa-chess-king fa-5x"></i>
+            <i class="fas fa-chess-king fa-2x"></i>
             <div id="mainFamilyFather" class="caption">Unknown</div>
           </div>
         </div>
         <div class="mother">
           <div class="thumbnail">
-            <i class="fas fa-chess-queen fa-5x"></i>
+            <i class="fas fa-chess-queen fa-2x"></i>
+            <div id="mainFamilyMother" class="caption">Unknown</div>
+          </div>          
+        </div>
+        <div id="mainFamilyKids" class="children"></div>          
+       
+    </article>
+<!--         
+      <article class="grid-container" id="mainFamily">
+         
+        <div class="father">
+          <div class="thumbnail">
+            <i class="fas fa-chess-king fa-2x"></i>
+            <div id="mainFamilyFather" class="caption">Unknown</div>
+          </div>
+        </div>
+        <div class="mother">
+          <div class="thumbnail">
+            <i class="fas fa-chess-queen fa-2x"></i>
             <div id="mainFamilyMother" class="caption">Unknown</div>
           </div>          
         </div>
         <div id="mainFamilyKids" class="children"></div>  
       </article>
       <article class="grid-container"  id="maleFamily">
-        <header class="familyTitle text-center">   
-          <strong >Paternal Family Tree</strong>
-        </header>          
-        <div class="father">
+          
+        <div class="paternalDad">
           <div class="thumbnail">
-            <i class="fas fa-chess-king fa-5x"></i>
+            <i class="fas fa-chess-king fa-2x"></i>
             <div id="paternalFamilyFather" class="caption">Father</div>
           </div>
         </div>
-        <div class="mother">
+        <div class="paternalMom">
           <div class="thumbnail">
-            <i class="fas fa-chess-queen fa-5x"></i>
+            <i class="fas fa-chess-queen fa-2x"></i>
             <div id="paternalFamilyMother" class="caption">Mother</div>
           </div>          
         </div> 
         <div id="paternalFamilyKids" class="children"></div>
       </article>
       <article class="grid-container"  id="femaleFamily">
-        <header class="familyTitle text-center">   
-          <strong >Maternal Family Tree</strong>
-        </header>          
-        <div class="father">
+        
+        <div class="maternalDad">
           <div class="thumbnail">
-            <i class="fas fa-chess-king fa-5x"></i>
+            <i class="fas fa-chess-king fa-2x"></i>
             <div id="maternalFamilyFather" class="caption">Father</div>
           </div>
         </div>
-        <div class="mother">
+        <div class="maternalMom">
           <div class="thumbnail">
-            <i class="fas fa-chess-queen fa-5x"></i>
+            <i class="fas fa-chess-queen fa-2x"></i>
             <div id="maternalFamilyMother" class="caption">Mother</div>
           </div>          
         </div>
         <div id="maternalFamilyKids" class="children"></div>  
       </article>    
-        
+-->        
     </section>
       
   <script>
@@ -333,7 +370,7 @@
           
         childDiv.classList.add("thumbnail");
           
-        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-2x"></i>';
           
         let childNameDiv = document.createElement("div");
           
@@ -370,7 +407,7 @@
           
         childDiv.classList.add("thumbnail");
           
-        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-2x"></i>';
           
         let childNameDiv = document.createElement("div");
           
@@ -407,7 +444,7 @@
           
         childDiv.classList.add("thumbnail");
           
-        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-5x"></i>';
+        childDiv.innerHTML = '<i class="fas fa-chess-pawn fa-2x"></i>';
           
         let childNameDiv = document.createElement("div");
           

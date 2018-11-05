@@ -3,13 +3,7 @@ article, footer {
     margin-top:20px;
 }
 
-/*created a border around the app*/
-section {
-    border: 1px solid black;
-    border-right: 3px solid black;
-    border-left: 3px solid black;
-    margin-top: 9px;
-}
+
 
 /*use a border to seperate the nav from the body*/
 header {
@@ -81,9 +75,9 @@ input {
         ' pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
         'father father mother mother'
         'pawn pawn pawn pawn';
-    grid-column-gap: 10px;
+    grid-column-gap: 1px;
     grid-row-gap: 15px;
-    justify-content:center;
+    //justify-content:center;
     justify-items: center; /*align all content in the center horizontally*/   
 }
 
@@ -95,33 +89,29 @@ input {
 
 .paternalDad {
   grid-area: PK;
-    grid-column: 1/2;
-    grid-row: 1;     
+  grid-row: 1;     
 }
 
 .paternalMom {
   grid-area: PQ;
-    grid-column: 3/4;
-    grid-row: 1;     
+  grid-row: 1;     
 }
 
 .maternalDad{
   grid-area: MK;
-    grid-column: 5/6;
-    grid-row: 1;     
+  grid-row: 1;     
 }
 
 .maternalMom {
   grid-area: MQ;
-    grid-column: 7/8;
-    grid-row: 1;     
+  grid-row: 1;     
 }
 
 /*set this div as the first two columns in the top row*/
 .father {
-    grid-area: king; /*giving this class a grid-area name*/
-    grid-column: 1/2;
-    grid-row: 3;  
+  grid-area: king; /*giving this class a grid-area name*/
+  grid-column: 1/2;
+  grid-row: 3;  
 }
 
 /*set this div as the last two columns in the top row*/
@@ -135,9 +125,7 @@ input {
     grid-area: pawnPaternal; /*giving this class a grid-area name*/ 
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
-    top father and mother areas have equal spacing*/
-    grid-column-gap: 10px;    
-    background-color: navy;
+    top father and mother areas have equal spacing*/ 
 }
 
 .childrenMaternal {
@@ -145,21 +133,34 @@ input {
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
-    grid-column-gap: 10px; 
-    background-color: red;
 }
 
 .children {
     grid-area: pawn; /*giving this class a grid-area name*/ 
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
-    top father and mother areas have equal spacing*/
-    grid-column-gap: 10px;     
-    grid-column-gap: 10px; 
-    background-color: purple;
+    top father and mother areas have equal spacing*/ 
 }
 
 /*************** End of CSS Grid section for Family Tree*******************************/
+
+/*From 0 to 800 width created a border around the app */
+@media only screen and (max-width: 800px) {
+    section {
+    border: none;
+    margin-top: 9px;       
+    }   
+}
+
+/*From 0 to 800 width created a border around the app */
+@media only screen and (min-width: 801px) {
+    section {
+    border: 1px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    margin-top: 9px;       
+    }   
+}
 
 /*Tablets & Desktop or big screen
 From 490 to 599 the width is smaller and the window is moved to center of page */

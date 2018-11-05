@@ -45,15 +45,15 @@ input {
 /*****************Colors for Family Tree Icons *****/
 
 .fa-chess-king {
-    color: navy;
+    //color: navy;
 }
 
 .fa-chess-queen {
-    color: deeppink;
+    //color: deeppink;
 }
 
 .fa-chess-pawn {
-    color: darkgreen;
+    //color: darkgreen;
 }
 /****************************************************/
 
@@ -89,46 +89,54 @@ input {
 .familyPaTitle {
   grid-area: title;
   grid-row: 1;
-  grid-column: 1/ span 2;    
+  grid-column: 1/ span 2;
+  color: navy; 
 }
 
 .familyMaTitle {
   grid-area: title;
   grid-row: 1;
-  grid-column: 3/ 4;    
+  grid-column: 3/ 4; 
+    color: deeppink;     
 }
 
 .familyMainTitle {
   grid-area: mainTitle;
   grid-row: 4;
-  grid-column: 1/span 4;    
+  grid-column: 1/span 4; 
+  color: darkgreen;
 }
 
 .paternalDad {
   grid-area: PK;
-  grid-row: 2;     
+  grid-row: 2;
+  color: navy;    
 }
 
 .paternalMom {
   grid-area: PQ;
-  grid-row: 2;     
+  grid-row: 2; 
+  color: navy;     
 }
 
 .maternalDad{
   grid-area: MK;
-  grid-row: 2;     
+  grid-row: 2;   
+    color: deeppink;     
 }
 
 .maternalMom {
   grid-area: MQ;
-  grid-row: 2;     
+  grid-row: 2;
+    color: deeppink;     
 }
 
 /*set this div as the first two columns in the top row*/
 .father {
   grid-area: king; /*giving this class a grid-area name*/
   grid-column: 1/span 2;
-  grid-row: 5;      
+  grid-row: 5;
+  color: darkgreen;    
 }
 
 /*set this div as the last two columns in the top row*/
@@ -136,6 +144,7 @@ input {
     grid-area: queen; /*giving this class a grid-area name*/
     grid-column: 3/4; 
     grid-row: 5;
+    color: darkgreen;    
 }
 
 .childrenPaternal {
@@ -145,6 +154,7 @@ input {
     top father and mother areas have equal spacing*/
     grid-column-gap: 1px;    
     grid-row-gap: 15px;
+    color: navy;  
 }
 
 .childrenMaternal {
@@ -153,7 +163,8 @@ input {
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
     grid-column-gap: 1px;    
-    grid-row-gap: 15px;    
+    grid-row-gap: 15px; 
+    color: deeppink;    
 }
 
 .children {
@@ -163,6 +174,7 @@ input {
     top father and mother areas have equal spacing*/ 
     grid-column-gap: 5px;    
     grid-row-gap: 15px;    
+    color: darkgreen;    
 }
 
 /*************** End of CSS Grid section for Family Tree*******************************/

@@ -174,39 +174,39 @@
         </div>
       </header>
       <article class="grid-container" id="sires">
-        <div class="paternalDad">
+        <div class="paternalDad text-center">
           
-            <i class="fas fa-chess-king"></i>
+            <i class="fas fa-chess-king  fa-2x"></i>
             <div id="paternalFamilyFather" class="caption">Paternal Dad</div>
           
         </div>
-        <div class="paternalMom">
+        <div class="paternalMom  text-center">
           
-            <i class="fas fa-chess-queen"></i>
+            <i class="fas fa-chess-queen  fa-2x"></i>
             <div id="paternalFamilyMother" class="caption">Paternal Mom</div>
           </div>          
          
         <div id="paternalFamilyKids" class="childrenPaternal"></div>
-        <div class="maternalDad">
+        <div class="maternalDad  text-center">
           
-            <i class="fas fa-chess-king"></i>
+            <i class="fas fa-chess-king  fa-2x"></i>
             <div id="maternalFamilyFather" class="caption">Maternal Dad</div>
           
         </div>
-        <div class="maternalMom">
+        <div class="maternalMom  text-center">
           
-            <i class="fas fa-chess-queen"></i>
+            <i class="fas fa-chess-queen  fa-2x"></i>
             <div id="maternalFamilyMother" class="caption">Maternal Mom</div>
                     
         </div>
         <div id="maternalFamilyKids" class="childrenMaternal"></div>
-        <div class="father">
+        <div class="father  text-center">
           
             <i class="fas fa-chess-king fa-2x"></i>
             <div id="mainFamilyFather" class="caption">Unknown</div>
           
         </div>
-        <div class="mother">
+        <div class="mother  text-center">
           
             <i class="fas fa-chess-queen fa-2x"></i>
             <div id="mainFamilyMother" class="caption">Unknown</div>
@@ -317,6 +317,8 @@
       for(var i=2; i<savedCurrentFamily.length; i++){
         let childDiv = document.createElement("div");
           
+        childDiv.classList.add("text-center");          
+          
         childDiv.innerHTML = '<i class="fas fa-chess-pawn"></i>';
           
         let childNameDiv = document.createElement("div");
@@ -352,6 +354,8 @@
       for(var i=2; i<savedPaternalFamily.length; i++){
         let childDiv = document.createElement("div");
           
+        childDiv.classList.add("text-center");             
+          
         childDiv.innerHTML = '<i class="fas fa-chess-pawn"></i>';
           
         let childNameDiv = document.createElement("div");
@@ -386,6 +390,8 @@
       //Use an array to cycle through kids names to be displayead        
       for(var i=2; i<savedMaternalFamily.length; i++){
         let childDiv = document.createElement("div");
+          
+        childDiv.classList.add("text-center");             
           
         childDiv.innerHTML = '<i class="fas fa-chess-pawn"></i>';
           

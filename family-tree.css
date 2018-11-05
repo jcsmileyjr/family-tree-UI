@@ -114,7 +114,7 @@ input {
 .father {
   grid-area: king; /*giving this class a grid-area name*/
   grid-column: 1/2;
-  grid-row: 3;  
+  grid-row: 3;      
 }
 
 /*set this div as the last two columns in the top row*/
@@ -128,7 +128,9 @@ input {
     grid-area: pawnPaternal; /*giving this class a grid-area name*/ 
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
-    top father and mother areas have equal spacing*/ 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 1px;    
+    grid-row-gap: 15px;
 }
 
 .childrenMaternal {
@@ -136,6 +138,8 @@ input {
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
+    grid-column-gap: 1px;    
+    grid-row-gap: 15px;    
 }
 
 .children {
@@ -143,6 +147,8 @@ input {
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/ 
+    grid-column-gap: 5px;    
+    grid-row-gap: 15px;    
 }
 
 /*************** End of CSS Grid section for Family Tree*******************************/

@@ -3,13 +3,7 @@ article, footer {
     margin-top:20px;
 }
 
-/*created a border around the app*/
-section {
-    border: 1px solid black;
-    border-right: 3px solid black;
-    border-left: 3px solid black;
-    margin-top: 9px;
-}
+
 
 /*use a border to seperate the nav from the body*/
 header {
@@ -44,18 +38,22 @@ input {
     display: none;
 }
 
+#familyTree {
+    font-size: 1.5vh;
+}
+
 /*****************Colors for Family Tree Icons *****/
 
 .fa-chess-king {
-    color: navy;
+    //color: navy;
 }
 
 .fa-chess-queen {
-    color: deeppink;
+    //color: deeppink;
 }
 
 .fa-chess-pawn {
-    color: darkgreen;
+    //color: darkgreen;
 }
 /****************************************************/
 
@@ -76,44 +74,128 @@ input {
     display: grid; /*grid format*/
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
-    grid-template-areas: 'title title title title'     
-                       ' king king queen queen ' 
-                       ' pawn pawn pawn pawn ';
-    grid-column-gap: 10px;
+    grid-template-areas:
+        'title title title title'
+        'PK PQ MK MQ' 
+        'pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
+        'mainTitle mainTitle mainTitle mainTitle'
+        'father father mother mother'
+        'pawn pawn pawn pawn';
+    grid-column-gap: 1px;
     grid-row-gap: 15px;
-    justify-content:center;
     justify-items: center; /*align all content in the center horizontally*/   
 }
 
-.familyTitle {
-    grid-area: title;
-    grid-column: 1/4;
-    grid-row: 1
+.familyPaTitle {
+  grid-area: title;
+  grid-row: 1;
+  grid-column: 1/ span 2;
+  color: navy; 
+}
+
+.familyMaTitle {
+  grid-area: title;
+  grid-row: 1;
+  grid-column: 3/ 4; 
+    color: deeppink;     
+}
+
+.familyMainTitle {
+  grid-area: mainTitle;
+  grid-row: 4;
+  grid-column: 1/span 4; 
+  color: darkgreen;
+}
+
+.paternalDad {
+  grid-area: PK;
+  grid-row: 2;
+  color: navy;    
+}
+
+.paternalMom {
+  grid-area: PQ;
+  grid-row: 2; 
+  color: navy;     
+}
+
+.maternalDad{
+  grid-area: MK;
+  grid-row: 2;   
+    color: deeppink;     
+}
+
+.maternalMom {
+  grid-area: MQ;
+  grid-row: 2;
+    color: deeppink;     
 }
 
 /*set this div as the first two columns in the top row*/
 .father {
-    grid-area: king; /*giving this class a grid-area name*/
-    grid-column: 1/2;
-    grid-row: 2;  
+  grid-area: king; /*giving this class a grid-area name*/
+  grid-column: 1/span 2;
+  grid-row: 5;
+  color: darkgreen;    
 }
 
 /*set this div as the last two columns in the top row*/
 .mother {
     grid-area: queen; /*giving this class a grid-area name*/
     grid-column: 3/4; 
-    grid-row: 2;
+    grid-row: 5;
+    color: darkgreen;    
+}
+
+.childrenPaternal {
+    grid-area: pawnPaternal; /*giving this class a grid-area name*/ 
+    display: grid;
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 1px;    
+    grid-row-gap: 15px;
+    color: navy;  
+}
+
+.childrenMaternal {
+    grid-area: pawnMaternal; /*giving this class a grid-area name*/ 
+    display: grid;
+    grid-template-columns: auto auto auto auto; /*four cols, this way the 
+    top father and mother areas have equal spacing*/
+    grid-column-gap: 1px;    
+    grid-row-gap: 15px; 
+    color: deeppink;    
 }
 
 .children {
     grid-area: pawn; /*giving this class a grid-area name*/ 
     display: grid;
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
-    top father and mother areas have equal spacing*/
-    grid-column-gap: 10px;     
+    top father and mother areas have equal spacing*/ 
+    grid-column-gap: 5px;    
+    grid-row-gap: 15px;    
+    color: darkgreen;    
 }
 
 /*************** End of CSS Grid section for Family Tree*******************************/
+
+/*From 0 to 800 width created a border around the app */
+@media only screen and (max-width: 800px) {
+    section {
+    border: none;
+    margin-top: 9px;       
+    }   
+}
+
+/*From 0 to 800 width created a border around the app */
+@media only screen and (min-width: 801px) {
+    section {
+    border: 1px solid black;
+    border-right: 3px solid black;
+    border-left: 3px solid black;
+    margin-top: 9px;       
+    }   
+}
 
 /*Tablets & Desktop or big screen
 From 490 to 599 the width is smaller and the window is moved to center of page */

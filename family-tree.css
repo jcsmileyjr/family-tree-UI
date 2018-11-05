@@ -74,9 +74,11 @@ input {
     display: grid; /*grid format*/
     grid-template-columns: auto auto auto auto; /*four cols, this way the 
     top father and mother areas have equal spacing*/
-    grid-template-areas: 
+    grid-template-areas:
+        'title title title title'
         'PK PQ MK MQ' 
         'pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
+        'mainTitle mainTitle mainTitle mainTitle'
         'father father mother mother'
         'pawn pawn pawn pawn';
     grid-column-gap: 1px;
@@ -84,44 +86,56 @@ input {
     justify-items: center; /*align all content in the center horizontally*/   
 }
 
-.familyTitle {
-    grid-area: title;
-    grid-column: ;
-    grid-row: 
+.familyPaTitle {
+  grid-area: title;
+  grid-row: 1;
+  grid-column: 1/ span 2;    
+}
+
+.familyMaTitle {
+  grid-area: title;
+  grid-row: 1;
+  grid-column: 3/ 4;    
+}
+
+.familyMainTitle {
+  grid-area: mainTitle;
+  grid-row: 4;
+  grid-column: 1/span 4;    
 }
 
 .paternalDad {
   grid-area: PK;
-  grid-row: 1;     
+  grid-row: 2;     
 }
 
 .paternalMom {
   grid-area: PQ;
-  grid-row: 1;     
+  grid-row: 2;     
 }
 
 .maternalDad{
   grid-area: MK;
-  grid-row: 1;     
+  grid-row: 2;     
 }
 
 .maternalMom {
   grid-area: MQ;
-  grid-row: 1;     
+  grid-row: 2;     
 }
 
 /*set this div as the first two columns in the top row*/
 .father {
   grid-area: king; /*giving this class a grid-area name*/
-  grid-column: 1/2;
-  grid-row: 3;      
+  grid-column: 1/span 2;
+  grid-row: 5;      
 }
 
 /*set this div as the last two columns in the top row*/
 .mother {
     grid-area: queen; /*giving this class a grid-area name*/
     grid-column: 3/4; 
-    grid-row: 3;
+    grid-row: 5;
 }
 
 .childrenPaternal {

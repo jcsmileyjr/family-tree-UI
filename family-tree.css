@@ -81,7 +81,6 @@ input {
         'pawn pawn pawn pawn';
     grid-column-gap: 1px;
     grid-row-gap: 15px;
-    //justify-content:center;
     justify-items: center; /*align all content in the center horizontally*/   
 }
 

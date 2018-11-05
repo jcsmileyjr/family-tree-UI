@@ -38,6 +38,10 @@ input {
     display: none;
 }
 
+#familyTree {
+    font-size: 1.5vh;
+}
+
 /*****************Colors for Family Tree Icons *****/
 
 .fa-chess-king {
@@ -72,7 +76,7 @@ input {
     top father and mother areas have equal spacing*/
     grid-template-areas: 
         'PK PQ MK MQ' 
-        ' pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
+        'pawnPaternal pawnPaternal pawnMaternal pawnMaternal '
         'father father mother mother'
         'pawn pawn pawn pawn';
     grid-column-gap: 1px;
